@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.PriorityQueue;
 
-interface InnerUWGraph {
+interface InnerUWGraph{
     void addEdge(int s, int d, int wt);
     boolean isConnected();
     List<Integer> reachable(int source);
@@ -81,6 +81,7 @@ class Graph implements InnerUWGraph{
         dfs(source, visted, adjList);
         return reachableList;
     }
+    
     private int prism(){
         int minCost = 0;
         PriorityQueue<Pair> pq = new PriorityQueue<>();
@@ -156,7 +157,6 @@ class Graph implements InnerUWGraph{
                 }
             }
         }
- 
     }
 
     @Override
@@ -200,9 +200,9 @@ public class GraphImplementation{
 
         graph.printGraph();
         System.out.println(graph.isConnected());
-        System.out.println(graph.shortestPath(3, 4));
-//        graph.mst();
-        System.out.println( graph.shortestPath(0, 3));
+        graph.reachable(0);
+        graph.mst();
+        System.out.println( graph.shortestPath(2, 0));
         
     }
 }

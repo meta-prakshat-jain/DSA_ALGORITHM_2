@@ -19,13 +19,8 @@ public class QuickSortLinkedList  {
 		}
 		return tail;
 	}
+	
 
-
-	static void swap(int salary,int salary_2) {
-		int temp=salary;
-		salary=salary_2;
-		salary_2=temp;
-	}
 	static Node partition(Node head,Node tail) {
 		Node pivot=head;
 		Node curr=head.next;
@@ -37,6 +32,7 @@ public class QuickSortLinkedList  {
 					(curr.employee.getSalary() == pivot.employee.getSalary() && 
 					curr.employee.getAge() < pivot.employee.getAge())
 					)  {
+				
 				int temp = curr.employee.getSalary();
 				curr.employee.setSalary(prev.next.employee.getSalary());
 				prev.next.employee.setSalary(temp);
